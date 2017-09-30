@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:几何模型(Geometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">CircleGeometry是一个简单的欧氏几何形。它是众多三角形面围绕一个中心点并延伸到给定的半径范围而组成。它是用一个开始角度和一个给定的中心角度逆时针建立。它可以用来创建规则的多边形模型，其中分割面的数量决定的面的数量。</div>
+
+<h2>例子</h2>
+
+<iframe src='scenes/geometry-browser.html#CircleGeometry'></iframe>
+
+<code>
+	var geometry = new THREE.CircleGeometry( 5, 32 );
+	var material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+	var circle = new THREE.Mesh( geometry, material );
+	scene.add( circle );
+</code>
+
+
+<h2>构造器（Constructor）</h2>
+
+<h3>[name]([page:Float radius], [page:Integer segments], [page:Float thetaStart], [page:Float thetaLength])</h3>
+<div>
+	radius — 圆的半径, 默认值 = 50.<br />
+	segments — 分割面数量 (三角形), 最低值 = 3, 默认值 = 8.<br />
+	thetaStart — 第一个分割面的开始角度, 默认值 = 0 (3点钟方向).<br />
+	thetaLength — 圆形扇形的圆心角通常称为θ。默认为2 * Pi，这形成了一个完整的圆
+</div>
+
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:缓存几何模型(BufferGeometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">这个是属于 [page:CircleGeometry] 部分的 [page:缓存几何模型(BufferGeometry)].</div>
+
+<h2>例子</h2>
+
+<iframe src='scenes/geometry-browser.html#CircleBufferGeometry'></iframe>
+
+<code>
+	var geometry = new THREE.CircleBufferGeometry( 5, 32 );
+	var material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+	var circle = new THREE.Mesh( geometry, material );
+	scene.add( circle );
+</code>
+
+
+<h2>构造器（Constructor）</h2>
+
+<h3>[name]([page:Float radius], [page:Integer segments], [page:Float thetaStart], [page:Float thetaLength])</h3>
+<div>
+	radius — 圆的半径, 默认值 = 50.<br />
+	segments — 分割面数量 (三角形), 最低值 = 3, 默认值 = 8.<br />
+	thetaStart — 第一个分割面的开始角度, 默认值 = 0 (3点钟方向).<br />
+	thetaLength — 圆形扇形的圆心角通常称为θ。默认为2 * Pi，这形成了一个完整的圆
+</div>
+
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

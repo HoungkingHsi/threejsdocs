@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:缓存几何模型(BufferGeometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">This is the [page:缓存几何模型(BufferGeometry)] port of [page:PlaneGeometry].</div>
+
+<h2>例子</h2>
+
+<iframe src='scenes/geometry-browser.html#PlaneBufferGeometry'></iframe>
+
+<code>var geometry = new THREE.PlaneBufferGeometry( 5, 20, 32 );
+	var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+	var plane = new THREE.Mesh( geometry, material );
+	scene.add( plane );
+</code>
+
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Float width], [page:Float height], [page:Integer widthSegments], [page:Integer heightSegments])</h3>
+<div>
+	width — 沿X轴宽度.<br />
+	height — 沿Y轴高度.<br />
+	widthSegments — 可选参数，x方向的分段数，缺省为1. <br />
+	heightSegments — 可选参数，y方向的分段数，缺省为1.
+</div>
+
+
+<h2>属性（Properties）</h2>
+
+<div>
+	构造函数的每个参数均可通过对象的参数属性来访问。实例化之后任何这些属性的修改不会改变已有几何模型。
+</div>
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:缓存几何模型(BufferGeometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">This is the [page:缓存几何模型(BufferGeometry)] port of [page:SphereGeometry].</div>
+
+<h2>例子</h2>
+
+<iframe src='scenes/geometry-browser.html#SphereBufferGeometry'></iframe>
+
+<code>var geometry = new THREE.SphereBufferGeometry( 5, 32, 32 );
+	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+	var sphere = new THREE.Mesh( geometry, material );
+	scene.add( sphere );
+</code>
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Float radius], [page:Integer widthSegments], [page:Integer heightSegments], [page:Float phiStart], [page:Float phiLength], [page:Float thetaStart], [page:Float thetaLength])</h3>
+
+<div>
+	radius — 球体半径. 默认值为50.<br />
+	widthSegments — 水平分割面的数量. 最小值为3, 默认值为8.<br />
+	heightSegments — 垂直分割面的数量. 最小值为2, 默认值为6.<br />
+	phiStart — 指定水平起始角度. 默认值为0.<br />
+	phiLength — 指定水平扫描角度大小. 默认值为 Math.PI * 2.<br />
+	thetaStart — 指定垂直起始角度. 默认值为0.<br />
+	thetaLength — 指定垂直扫描角度大小. 默认值为Math.PI.<br />
+</div>
+
+<div>
+	几何模型是通过扫描和计算绕Y轴（水平扫描）和Z轴（垂直扫描）的顶点创建而成。因此，不完整的球（类似于<em>'sphere slices'</em>）可以通过对phistart，philength，thetastart和thetalength使用不同的值来创建。
+</div>
+
+
+<h2>属性（Properties）</h2>
+
+<div>
+	构造函数的每个参数都可作为同一名称的属性。实例化后，这些属性的任何更改都不会改变几何模型。
+</div>
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

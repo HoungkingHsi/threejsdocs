@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:几何模型(Geometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">用形状路径来创建塑形模型</div>
+
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Array shapes], [page:Object options])</h3>
+<div>
+	shapes — 形状或形状数组. <br />
+	options — 包括下面这些参数的对象.
+
+	<ul>
+		<li>curveSegments —  int. 曲线上点的个数</li>
+		<li>steps —  int. 用于细分拉伸的样条段数量</li>
+		<li>amount —  int. 拉伸形状的深度</li>
+		<li>bevelEnabled —  bool. 打开斜面</li>
+		<li>bevelThickness —  float. 在原来的形状里面弄多深的斜面</li>
+		<li>bevelSize —  float. 斜面离形状轮廓的距离</li>
+		<li>bevelSegments —  int. 斜面层的数量</li>
+		<li>extrudePath —  THREE.CurvePath. 沿3D样条路径拉伸形状. (创建帧（如果帧没有定义))</li>
+		<li>frames —  THREE.TubeGeometry.FrenetFrames. 包含切线、法线、副法线的数组</li>
+		<li>material —  int. 前面和后面的材质索引号</li>
+		<li>extrudeMaterial —  int. 拉伸或斜化面的材质索引号</li>
+		<li>UVGenerator —  Object. 提供UV生成器各功能的对象</li>
+	</ul>
+
+</div>
+<div>
+	这个对象将一个2D图形拉伸为一个3D几何体.
+</div>
+
+
+<h2>属性（Properties）</h2>
+
+
+<h2>方法（Methods）</h2>
+
+<h3>[method:null addShapeList]([page:Array shapes], [page:Object options])</h3>
+<div>
+	shapes — 需要增加形状数组. <br />
+	options — 包含下列参数的对象.
+	<ul>
+		<li>curveSegments —  int. 曲线上点的个数</li>
+		<li>steps —  int. 用于细分拉伸的样条段数量</li>
+		<li>amount —  int. 拉伸形状的深度</li>
+		<li>bevelEnabled —  bool. 打开斜面</li>
+		<li>bevelThickness —  float. 在原来的形状里面弄多深的斜面</li>
+		<li>bevelSize —  float. 斜面离形状轮廓的距离</li>
+		<li>bevelSegments —  int. 斜面层的数量</li>
+		<li>extrudePath —  THREE.CurvePath. 沿3D样条路径拉伸形状. (创建帧（如果帧没有定义))</li>
+		<li>frames —  THREE.TubeGeometry.FrenetFrames.  包含切线、法线、副法线的数组</li>
+		<li>material —  int. 前面和后面的材质索引号</li>
+		<li>extrudeMaterial —  int. 拉伸或斜化面的材质索引号</li>
+		<li>UVGenerator —  Object. 提供UV生成器各功能的对象</li>
+	</ul>
+</div>
+<div>增加一组形状到列表中进行拉伸.</div>
+
+<h3>[method:null addShape]([page:Shape shape], [page:Object options])</h3>
+<div>
+	shape — 一个需要增加的形状. <br />
+	options — 包含下列参数的对象.
+	<ul>
+		<li>curveSegments —  int. 曲线上点的个数</li>
+		<li>steps —  int. 用于细分拉伸的样条段数量</li>
+		<li>amount —  int. 拉伸形状的深度</li>
+		<li>bevelEnabled —  bool. 打开斜面</li>
+		<li>bevelThickness —  float. 在原来的形状里面弄多深的斜面</li>
+		<li>bevelSize —  float. 斜面离形状轮廓的距离</li>
+		<li>bevelSegments —  int. 斜面层的数量</li>
+		<li>extrudePath —  THREE.CurvePath. 沿3D样条路径拉伸形状. (创建帧（如果帧没有定义))</li>
+		<li>frames —  THREE.TubeGeometry.FrenetFrames.  包含切线、法线、副法线的数组</li>
+		<li>material —  int. 前面和后面的材质索引号</li>
+		<li>extrudeMaterial —  int. 拉伸或斜化面的材质索引号</li>
+		<li>UVGenerator —  Object. 提供UV生成器各功能的对象</li>
+	</ul>
+</div>
+<div>增加一个形状到列表中进行拉伸.</div>
+
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

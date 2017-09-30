@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:缓存几何模型(BufferGeometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">这个是属于 [page:CylinderGeometry] 部分的 [page:缓存几何模型(BufferGeometry)].</div>
+
+
+<h2>例子</h2>
+
+<iframe src='scenes/geometry-browser.html#CylinderBufferGeometry'></iframe>
+
+<code>var geometry = new THREE.CylinderBufferGeometry( 5, 5, 20, 32 );
+	var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+	var cylinder = new THREE.Mesh( geometry, material );
+	scene.add( cylinder );
+</code>
+
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Float radiusTop], [page:Float radiusBottom], [page:Float height], [page:Integer radiusSegments], [page:Integer heightSegments], [page:Boolean openEnded], [page:Float thetaStart], [page:Float thetaLength])</h3>
+<div>
+	radiusTop — 圆柱体顶端半径. 默认值为20.<br />
+	radiusBottom — 圆柱体底端半径. 默认值为20.<br />
+	height — 圆柱体高度. 默认值为100.<br />
+	radiusSegments — 围绕圆柱体周长的分割面数量. 默认值为8.<br />
+	heightSegments — 沿圆柱体高度的分割面数量. 默认值为1.<br />
+	openEnded — 指示圆柱体两端是打开还是覆盖的布尔值. 默认值为false, 意思是覆盖.<br />
+	thetaStart — 第一个分割面的开始角度, 默认值 = 0 (3点钟方向).<br />
+	thetaLength — 圆形扇形的圆心角通常称为θ。默认为2 * Pi，这形成了一个完整的圆柱体.
+</div>
+
+
+<h2>属性（Properties）</h2>
+
+<div>
+	每个构造函数参数都可以作为同一名称的属性访问。实例化后的这些属性的任何更改都不会改变几何体。
+</div>
+
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

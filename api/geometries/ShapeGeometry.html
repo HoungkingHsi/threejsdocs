@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:几何模型(Geometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">从一个或多个路径形状创建一个单面多边形几何模型. 类似于 [page:ExtrudeGeometry]</div>
+
+<h2>例子</h2>
+
+
+<code>
+	var rectLength = 120, rectWidth = 40;
+
+	var rectShape = new THREE.Shape();
+	rectShape.moveTo( 0,0 );
+	rectShape.lineTo( 0, rectWidth );
+	rectShape.lineTo( rectLength, rectWidth );
+	rectShape.lineTo( rectLength, 0 );
+	rectShape.lineTo( 0, 0 );
+
+	var rectGeom = new THREE.ShapeGeometry( rectShape );
+	var rectMesh = new THREE.Mesh( rectGeom, new THREE.MeshBasicMaterial( { color: 0xff0000 } ) ) ;
+
+	scene.add( rectMesh );
+</code>
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Array shapes], [page:Object options])</h3>
+<div>
+	shapes — 形状数组或单个形状<br />
+	options — 可选参数对象 [page:Object object]
+	<ul>
+		<li>curveSegments - [page:Integer] - 现在不在使用 - 默认为12</li>
+		<li>material - [page:Integer] - 在材质列表里面的索引序号</li>
+		<li>UVGenerator - UV生成器, 默认为 [page:ExtrudeGeometry]的 WorldUVGenerator全局UV生成器</li>
+	</ul>
+</div>
+
+
+<h2>方法（Methods）</h2>
+
+
+
+<h3>.addShapeList([page:Array shapes], [page:Object options]) [page:this]</h3>
+<div>
+	shapes — 形状数组<br />
+	options — 参见构造函数里的选项
+</div>
+<div>
+	增加一组形状到几何模型中去
+</div>
+
+<h3>[method:null addShape]([page:Shape shape], [page:Object options])</h3>
+<div>
+	shape — [page:Shape] <br />
+	options — 参见构造函数里的选项
+</div>
+<div>
+	增加一个形状到几何模型中去
+</div>
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

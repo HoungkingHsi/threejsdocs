@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:几何模型(Geometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">
+	多面体是一个由多个平面形成的3维实体。本CLASS类将取一个顶点数组并将它们投射到一个球体上，然后将它们划分成所需的期望细节层面。本CLASS类被 [page:DodecahedronGeometry], [page:IcosahedronGeometry], [page:OctahedronGeometry] 和 [page:TetrahedronGeometry] 用于生成各自的几何模型。
+</div>
+
+<h2>例子</h2>
+<code>
+	var verticesOfCube = [
+	-1,-1,-1,    1,-1,-1,    1, 1,-1,    -1, 1,-1,
+	-1,-1, 1,    1,-1, 1,    1, 1, 1,    -1, 1, 1,
+	];
+
+	var indicesOfFaces = [
+	2,1,0,    0,3,2,
+	0,4,7,    7,3,0,
+	0,1,5,    5,4,0,
+	1,2,6,    6,5,1,
+	2,3,7,    7,6,2,
+	4,5,6,    6,7,4
+	];
+
+	var geometry = new THREE.PolyhedronGeometry( verticesOfCube, indicesOfFaces, 6, 2 );
+</code>
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Array vertices], [page:Array faces], [page:Float radius], [page:Integer detail])</h3>
+<div>
+	vertices — [page:Array] 以 [1,1,1, -1,-1,-1, ... ] 这种形式出现的点的数组<br />
+	faces — [page:Array] 以 [0,1,2, 2,3,0, ... ] 这种形式出现的构成各个面的指数数组 <br />
+	radius — [page:Float] - 最终形状的半径 <br />
+	detail — [page:Integer] - 把几何模型细分成多少层. 层越多形状越光滑.
+</div>
+
+<h2>属性（Properties）</h2>
+
+<h3>[property:Object parameters]</h3>
+<div>
+	一个用于生成几何模型的拥有所有参数的对象。
+</div>
+
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

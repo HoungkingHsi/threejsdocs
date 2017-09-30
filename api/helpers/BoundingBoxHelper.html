@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../" />
+    <script src="list.js"></script>
+    <script src="page.js"></script>
+    <link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:Mesh] &rarr;
+
+<h1>包围盒辅助（[name]）</h1>
+
+<div class="desc">用于创建对象和世界轴对齐的包围盒的一个帮助对象。</div>
+
+
+<h2>例子</h2>
+
+<code>var hex  = 0xff0000;
+
+    var sphereMaterial = new THREE.MeshLambertMaterial( {color: 0x00ff00} );
+    var sphere = new THREE.Mesh( new THREE.SphereGeometry( 30, 12, 12), sphereMaterial );
+    scene.add( sphere );
+
+    var bbox = new THREE.BoundingBoxHelper( sphere, hex );
+    bbox.update();
+    scene.add( bbox );
+</code>
+<div class="info">注意，这个辅助对象将创建一个带 [page:盒子模型(BoxGeometry)] 的线框 [page:网孔(Mesh)]对象; 这个包围盒将因此具有面对角线。你可能想用[page:BoxHelper], 该对象生成一个不包含面对角线的 [page:Line] 对象。</div>
+
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:3D对象(Object3D) object], [page:Number hex])</h3>
+<div>
+    object -- Object3D -- 需要显示和世界轴对齐的包围盒的对象。<br />
+    hex -- 16进制颜色值，ex:0x888888
+</div>
+<div>
+    这将创建一个Line类型的包围盒对象。
+</div>
+
+
+<h2>属性（Properties）</h2>
+
+
+
+<h3>[property:Object3D object]</h3>
+<div>
+    需要显示和世界轴对齐的包围盒的对象。
+</div>
+
+<h3>[property:Box3 box]</h3>
+<div>
+    包围盒对象。
+</div>
+
+<h2>方法（Methods）</h2>
+
+<h3>[method:null update]()</h3>
+<div>
+    基于对象属性更新BoundingBoxHelper。
+</div>
+
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:几何模型(Geometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">沿一个3D曲线挤压出一个管道</div>
+
+<h2>例子</h2>
+
+<code>
+	var CustomSinCurve = THREE.Curve.create(
+	function ( scale ) { //custom curve constructor
+	this.scale = (scale === undefined) ? 1 : scale;
+	},
+
+	function ( t ) { //getPoint: t is between 0-1
+	var tx = t * 3 - 1.5,
+	ty = Math.sin( 2 * Math.PI * t ),
+	tz = 0;
+
+	return new THREE.Vector3(tx, ty, tz).multiplyScalar(this.scale);
+	}
+	);
+
+	var path = new CustomSinCurve( 10 );
+
+	var geometry = new THREE.TubeGeometry(
+	path,  //path
+	20,    //segments
+	2,     //radius
+	8,     //radiusSegments
+	false  //closed
+	);
+</code>
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Curve path], [page:Integer segments], [page:Float radius], [page:Integer radiusSegments], [page:Boolean closed])</h3>
+<div>
+	path — [page:Curve] - 从 [page:Curve] 基本类继承而来的路径<br />
+	segments — [page:Integer] - 组成管道的分割面数量, 默认值为64<br />
+	radius — [page:Float] - 管道半径, 默认值为1<br />
+	radiusSegments — [page:Integer] - 组成截面的分割面数量, 默认值为8 <br />
+	closed — [page:Boolean] 管道是开放的还是闭合的, 默认值为false <br />
+</div>
+
+
+<h2>属性（Properties）</h2>
+
+<h3>[property:Object parameters]</h3>
+<div>
+	一个用于生成几何的拥有所有参数的对象。
+</div>
+
+<h3>[property:Array tangents]</h3>
+<div>
+	一个 [page:Vector3] 切线数组
+</div>
+
+<h3>[property:Array normals]</h3>
+<div>
+	一个 [page:Vector3] 法线数组
+</div>
+
+<h3>[property:Array binormals]</h3>
+<div>
+	一个 [page:Vector3] 副法线数组
+</div>
+
+
+<h2>方法（Methods）</h2>
+
+
+<h3>THREE.TubeGeometry.FrenetFrames([page:Curve path], [page:Integer segments], [page:Boolean closed])</h3>
+<div>
+	path — 从[page:Curve]基本类继承而来的路径<br />
+	segments — 组成管道的分割面数量<br />
+	closed — 管道是开放的还是闭合的
+</div>
+<div>
+	一个生成Frenet框架的静态方法。这是在新的管道模型中内部运行并为其对象生成切线、副法线和法线属性。
+</div>
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>

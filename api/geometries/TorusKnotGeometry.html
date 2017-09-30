@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<base href="../../" />
+	<script src="list.js"></script>
+	<script src="page.js"></script>
+	<link type="text/css" rel="stylesheet" href="page.css" />
+</head>
+<body>
+[page:几何模型(Geometry)] &rarr;
+
+<h1>[name]</h1>
+
+<div class="desc">创建一个由一对互质整数P和Q产生的特性形状 - 环面扭结；如果P和Q不互质，其结果将是一个环面链环。</div>
+
+<iframe src='scenes/geometry-browser.html#TorusKnotGeometry'></iframe>
+
+
+<h2>例子</h2>
+
+<code>var geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );
+	var material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+	var torusKnot = new THREE.Mesh( geometry, material );
+	scene.add( torusKnot );
+</code>
+
+
+<h2>构造器（Constructor）</h2>
+
+
+<h3>[name]([page:Float radius], [page:Float tube], [page:Integer tubularSegments], [page:Integer radialSegments], [page:Integer p], [page:Integer q])</h3>
+<div>
+	<ul>
+		<li>radius — 半径, 默认值为100.</li>
+		<li>tube — 管道直径. 默认值为40.</li>
+		<li>tubularSegments — 默认值为64.</li>
+		<li>radialSegments — 默认值为8.</li>
+		<li>p — 这个值决定了几何体绕旋转对称轴绕了多少圈. 默认值为2.</li>
+		<li>q — 这个值决定了几何体绕环面的圆绕了多少圈. 默认值为3.</li>
+	</ul>
+</div>
+
+
+<h2>属性（Properties）</h2>
+
+
+<div>
+	构造函数的每个参数都可作为同一名称的属性。实例化后，这些属性的任何更改都不会改变几何模型。
+</div>
+
+
+<h2>源代码</h2>
+
+[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
+</body>
+</html>
